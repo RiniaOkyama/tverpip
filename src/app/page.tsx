@@ -1,7 +1,6 @@
-
-import { Button } from "@yamada-ui/react";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
+import TverURLForm from "./_components/tver-url-form";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC" });
@@ -9,7 +8,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Button>Click me!</Button>
+      <TverURLForm />
 
       {hello ? hello.greeting : "Loading tRPC query..."}
 
