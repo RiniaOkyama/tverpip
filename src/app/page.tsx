@@ -1,4 +1,5 @@
 
+import { Button } from "@yamada-ui/react";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 
@@ -8,6 +9,7 @@ export default async function Home() {
 
   return (
     <main>
+      <Button>Click me!</Button>
 
       {hello ? hello.greeting : "Loading tRPC query..."}
 

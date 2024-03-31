@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
 
+import { UIProvider } from "@yamada-ui/react";
 import { TRPCReactProvider } from "~/trpc/react";
 
 const inter = Inter({
@@ -23,7 +24,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`font-sans ${inter.variable}`}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <UIProvider>
+            {children}
+          </UIProvider>
+        </TRPCReactProvider>
       </body>
     </html>
   );
